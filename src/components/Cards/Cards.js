@@ -7,7 +7,7 @@ import { CardActionArea } from "@mui/material";
 import logo from "./../../logo.svg";
 import "./Cards.css";
 
-export default function ActionAreaCard(name, description, img) {
+export default function ActionAreaCard(name, subtitle) {
   return (
     <Card className="container" sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -15,14 +15,14 @@ export default function ActionAreaCard(name, description, img) {
           component="img"
           height="200"
           image={logo}
-          alt="green iguana"
+          alt="img"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {name.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description.description}
+            {subtitle.subtitle}
           </Typography>
         </CardContent>
       </CardActionArea>

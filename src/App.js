@@ -12,9 +12,11 @@ function App() {
     <div className="App">
         <Navbar />
         <Header title='title' subtitle='subtitle'/>
-        <Cards name='Historia' description='loquesea' />
-        <Cards name='Actualidad' description='loquesea'/>
-        <Cards name='Futuro' description='loquesea'/>
+        <div className='Cards'>
+        <Cards name='Historia' subtitle='loquesea' />
+        <Cards name='Actualidad' subtitle='loquesea'/>
+        <Cards name='Futuro' subtitle='loquesea'/>
+        </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
