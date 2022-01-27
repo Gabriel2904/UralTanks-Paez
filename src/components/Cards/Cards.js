@@ -1,14 +1,15 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import logo from './../../logo.svg'
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
+import logo from "./../../logo.svg";
+import "./Cards.css";
 
-export default function ActionAreaCard(props) {
+export default function ActionAreaCard(name, description, img) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className="container" sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -18,10 +19,10 @@ export default function ActionAreaCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {props.title}
+            {name.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {props.subtitle}
+            {description.description}
           </Typography>
         </CardContent>
       </CardActionArea>
