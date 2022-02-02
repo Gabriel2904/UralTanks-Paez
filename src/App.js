@@ -1,73 +1,39 @@
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import * as React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Cards from "./components/Cards/Cards";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
+const App = () => {
+  const [counter, setCounter] = useState(10);
+  const [name, setName] = useState('T34-85');
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      counter: 66,
-      name: "t34",
-    };
-
-    //Binding
-    //this.handlerCounterUp = this.handlerCounterUp.bind(this);
+  const handlerCounterUp = () => {
+    setCounter(counter + 1)
   }
 
-  handlerCounterUp = () => {
-    this.setState({ counter: this.state.counter + 1 });
-  };
-  handlerCounterDown = () => {
-    this.setState({ counter: this.state.counter - 1 });
-  };
-  handlerCounterUpdateName = () => {
-    this.setState({ counter: this.state.counter - 1 });
-  };
-  //handlerCounterUp() {
-  //this.setState({counter: this.state.counter + 1})
-  //}
-
-  render() {
-    return (
-      <div className="App">
-        <Navbar />
-        <Header title="title" subtitle="subtitle" />
+  return (
+    <div className="App">
+      <Navbar />
+      <header className="App-header">
+        <Header title="UralTanks" subtitle="subtitle" />
         <div className="Cards">
           <Cards name="Historia" subtitle="loquesea" />
           <Cards name="Actualidad" subtitle="loquesea" />
           <Cards name="Futuro" subtitle="loquesea" />
         </div>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <div className="CounterSection">
-          <p>Counter: {this.state.counter}</p>
-          <div className="btn.section">
-            <Button variant="contained" onClick={this.handlerCounterUp}>+</Button>
-            <Button variant="contained" onClick={this.handlerCounterDown}>-</Button>
-            
-          </div>
-          <h3>{this.state.name}</h3>
+        <img src={logo} className="App-logo" alt="logo" />
+        <div className="counter">
+          <p>Contador: {counter}</p>
+          <Button variant="outlined">-</Button>
+          <Button onClick={handlerCounterUp} variant="contained">+</Button>
+          <h3>{name}</h3>
         </div>
-      </div>
-    );
-  }
-}
+      </header>
+    </div>
+  );
+};
 
 export default App;
