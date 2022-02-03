@@ -1,12 +1,15 @@
-import React from 'react';
-import './Header.css';
+import React from "react";
+import "./Header.css";
+import Button from "@mui/material/Button";
 
-
-const Header = (props) => {
+const Header = ({ title, onClick }) => {
   return (
-  <div className='Header'>
-      <h1>{props.title}</h1>
-  </div>
+    <div className="Header">
+      <h1>{title}</h1>
+      <Button onClick={onClick} variant="outlined">
+        Hace Click!
+      </Button>
+    </div>
   );
 };
 
