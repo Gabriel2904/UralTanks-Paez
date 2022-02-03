@@ -23,7 +23,7 @@ const ItemCount = () => {
 
   return (
     <div className="item">
-      <p>Contador: {items}</p>
+      <p>Items: {items}</p>
       <Button onClick={onLess} variant="outlined">
         -
       </Button>
