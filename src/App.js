@@ -4,12 +4,12 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Cards from "./components/Cards/Cards";
+import CardListComponent from "./components/CardListComponent/CardListComponent";
 import ItemCount from "./components/itemCount/itemCount";
 import Button from "@mui/material/Button";
 
 const App = () => {
   const [counter, setCounter] = useState(10);
-  
 
   const handlerCounterUp = () => {
     setCounter(counter + 1);
@@ -40,6 +40,7 @@ const App = () => {
             +
           </Button>
         </div>
+        <CardListComponent />
       </header>
     </div>
   );
